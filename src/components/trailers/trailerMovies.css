@@ -1,0 +1,43 @@
+.player-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(55, 50, 50, 0.9);
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+.player-container svg {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.player div {
+  width: 1000px !important;
+  height: 563px !important;
+}
+.player h1 {
+    color: white;
+    font-size: 5rem;
+}
+@media screen and (max-width: 1050px) {
+  .player div {
+    width: 640px !important;
+    height: 360px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .player div {
+    width: 450px !important;
+    height: 253px !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .player div {
+    width: 320px !important;
+    height: 180px !important;
+  }
+}
