@@ -3,17 +3,19 @@ import { useState } from "react";
 import ReactPlayer from "react-player";
 import { RiCloseLine } from "react-icons/ri";
 import "./trailerMovies.css";
+import { Api_Key, linkBeginning} from "../APIcall";
+
 function TrailerMovies({ movieID, handleDisplayTrailer, mediaType }) {
   const [videoURL, setVideoURL] = useState("");
   const [isTrailerFound, setIsTrailerFound] = useState(false);
 
   async function handleSearch() {
     const response = await fetch(
-      `https://api.themoviedb.org/3/${mediaType}/${movieID}/videos?api_key=3d89869626b8b5a425dd887fe14ca987&language=en-US`
+      `${linkBeginning}${mediaType}/${movieID}/videos?api_key=${Api_Key}&language=en-US`
     );
     const responseJSON = await response.json();
-    //console.log(responseJSON);
     let officialTrailer;
+ 
     const responseArray = responseJSON.results;
     if (responseArray.length > 0) {
       officialTrailer = responseArray.find((obj) => {

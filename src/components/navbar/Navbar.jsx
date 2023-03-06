@@ -8,7 +8,6 @@ import galaxyIcon from "./galaxy-icon.png";
 import MoviesPage from "../movies/MoviesPage"
 import TvShows from "../tvshows/TvShows";
 import Trends from "../trends/Trends";
-import Pricing from "../pricing/Pricing";
 
 
 
@@ -20,11 +19,11 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-options">
           <img src={galaxyIcon} />
-          <h1>MOVIE GALAXY</h1>
+          <h1>MOVIES GALAXY</h1>
           <NavLink to="/"><span>Movies</span></NavLink>
           <NavLink to="/tvshows"><span>TV Shows</span></NavLink>
           <NavLink to="/trends"><span>Trending</span></NavLink>
-          <NavLink to="/pricing" ><span>Pricing</span></NavLink>
+        
         </div>
         <div className="navbar-input-group">
            <div>
@@ -53,10 +52,9 @@ function Navbar() {
           )}
           {toggleMenu && (
               <div className="navbar-options-menu">
-                  <span>Movies</span>
-                  <span>TV Shows</span>
-                  <span>Trending</span>
-                  <span>Pricing</span>
+                <NavLink to="/"><span>Movies</span></NavLink>
+                <NavLink to="/tvshows"><span>TV Shows</span></NavLink>
+                <NavLink to="/trends"><span>Trending</span></NavLink>
               </div>
           )}
         </div>
@@ -65,7 +63,6 @@ function Navbar() {
         <Route path="" element={<MoviesPage inputValue={inputValue}/>}/>
         <Route path="tvshows" element={<TvShows inputValue={inputValue}/>}/>
         <Route path="trends" element={<Trends inputValue={inputValue}/>}/>
-        <Route path="pricing" element={<Pricing/>}/>
       </Routes>
     </React.Fragment>
   );

@@ -1,30 +1,26 @@
-import React from 'react'
-import MoviesContainer from '../movies/MoviesContainer' 
+import React from "react";
+import MoviesContainer from "../movies/MoviesContainer";
 import { useState, useEffect } from "react";
-
-const Api_Key = "3d89869626b8b5a425dd887fe14ca987";
+import { searchMovies } from "../APIcall";
 
 function TvShows(props) {
   const [movies, setMovies] = useState([]);
-  const mediaType = "tv"
+  const mediaType = "tv";
   const input = props.inputValue;
-  const pageAPI = props.pageAPI || "discover";
-  const API_URL = `https://api.themoviedb.org/3/${
-    input ? "search" : "discover"
-  }/${mediaType}?api_key=${Api_Key}${input ? "&query=" + input : ""}`;
 
-  const searchMovies = async () => {
-    const response = await fetch(API_URL);
-    const data = await response.json();
-    setMovies(data.results);
-  };
+  const linksArr = [
+    `discover/${mediaType}`,
+    `search/${mediaType}`,
+    input,
+    `&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York`,
+  ];
   useEffect(() => {
-    searchMovies();
+    searchMovies(linksArr).then(function (res) {
+      setMovies(res.results);
+    });
   }, [input]);
 
-  return (
-    <MoviesContainer movies={movies} mediaType ={mediaType}/>
-  )
+  return <MoviesContainer movies={movies} mediaType={mediaType} />;
 }
 
-export default TvShows
+export default TvShows;

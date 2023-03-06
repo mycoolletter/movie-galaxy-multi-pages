@@ -1,26 +1,22 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import MoviesContainer from '../movies/MoviesContainer'
+import MoviesContainer from "../movies/MoviesContainer";
+import { searchMovies } from "../APIcall";
 
 function Trends(props) {
-  const [movies, setMovies] = useState([]);
   const input = props.inputValue;
-  const pageAPI = "https://api.themoviedb.org/3/trending/all/week?api_key=3d89869626b8b5a425dd887fe14ca987"
-  const searchMulti = `https://api.themoviedb.org/3/search/multi?api_key=3d89869626b8b5a425dd887fe14ca987&query=${input}`
-  const API_URL = input ? searchMulti: pageAPI;
+  const [movies, setMovies] = useState([]);
+  const mediaType = "multi";
+  const linksArr = [
+    `trending/all/week`,
+    `search/${mediaType}`,
+    input,
+  ];
 
-  const searchMovies = async () => {
-    const response = await fetch(API_URL);
-    const data = await response.json();
-    setMovies(data.results);
-  };
   useEffect(() => {
-    searchMovies();
+    searchMovies(linksArr).then(function(res) { setMovies(res.results) });
   }, [input]);
-
-  return (
-    <MoviesContainer movies={movies}  />
-  )
+  return <MoviesContainer movies={movies} />;
 }
 
-export default Trends
+export default Trends;

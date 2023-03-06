@@ -65,7 +65,6 @@ nav a {
 }
 .navbar-input-group div {
   position: relative;
-  /* width: 100%; */
 }
 .navbar-options-menu {
   top: 169px;
@@ -78,6 +77,7 @@ nav a {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  z-index: 2;
 }
 
 @media screen and (max-width: 1050px) {
@@ -142,23 +142,3 @@ nav a {
     top: 38px;
   }
 }
-
-
-/* span #HomeLight, #MoviesLight, #TrendingLight, #PricingLight{
-    color: #fff;
-} */
-/* span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:hover{
-    border-bottom: 2px solid #ff206e;
-} */
-/* #navBarColor{
-    background-color: #38bdab;
-    transition: .6s;
-} */
-
-/* #heading{
-    color: #ff206e;
-} */
-/* #navBarColor span:hover{
-    border-bottom: 2px solid #ff206e;
-    padding-bottom: 5px;
-} */
