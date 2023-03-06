@@ -20,9 +20,9 @@ function Navbar() {
         <div className="navbar-options">
           <img src={galaxyIcon} />
           <h1>MOVIES GALAXY</h1>
-          <NavLink to="/"><span>Movies</span></NavLink>
-          <NavLink to="/tvshows"><span>TV Shows</span></NavLink>
-          <NavLink to="/trends"><span>Trending</span></NavLink>
+          <NavLink to="movie-galaxy-multi-pages/"><span>Movies</span></NavLink>
+          <NavLink to="movie-galaxy-multi-pages/tvshows"><span>TV Shows</span></NavLink>
+          <NavLink to="movie-galaxy-multi-pages/trends"><span>Trending</span></NavLink>
         
         </div>
         <div className="navbar-input-group">
@@ -52,17 +52,17 @@ function Navbar() {
           )}
           {toggleMenu && (
               <div className="navbar-options-menu">
-                <NavLink to="/"><span>Movies</span></NavLink>
-                <NavLink to="/tvshows"><span>TV Shows</span></NavLink>
-                <NavLink to="/trends"><span>Trending</span></NavLink>
+                <NavLink to="movie-galaxy-multi-pages/"><span>Movies</span></NavLink>
+                <NavLink to="movie-galaxy-multi-pages/tvshows"><span>TV Shows</span></NavLink>
+                <NavLink to="movie-galaxy-multi-pages/trends"><span>Trending</span></NavLink>
               </div>
           )}
         </div>
       </nav>
       <Routes>
-        <Route path="" element={<MoviesPage inputValue={inputValue}/>}/>
-        <Route path="tvshows" element={<TvShows inputValue={inputValue}/>}/>
-        <Route path="trends" element={<Trends inputValue={inputValue}/>}/>
+        <Route path="movie-galaxy-multi-pages/" element={<MoviesPage inputValue={inputValue}/>}/>
+        <Route path="movie-galaxy-multi-pages/tvshows" element={<TvShows inputValue={inputValue}/>}/>
+        <Route path="movie-galaxy-multi-pages/trends" element={<Trends inputValue={inputValue}/>}/>
       </Routes>
     </React.Fragment>
   );
