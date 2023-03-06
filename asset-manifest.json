@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/movie-galaxy-multi-pages/static/css/main.c965fedf.css",
+    "main.js": "/movie-galaxy-multi-pages/static/js/main.24e41021.js",
+    "index.html": "/movie-galaxy-multi-pages/index.html",
+    "main.c965fedf.css.map": "/movie-galaxy-multi-pages/static/css/main.c965fedf.css.map",
+    "main.24e41021.js.map": "/movie-galaxy-multi-pages/static/js/main.24e41021.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c965fedf.css",
+    "static/js/main.24e41021.js"
+  ]
+}
